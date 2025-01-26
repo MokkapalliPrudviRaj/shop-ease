@@ -3,17 +3,27 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TextSearchComponent } from './text-search/text-search.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { HttpClientModule } from '@angular/common/http';
+import { BrandFilterComponent } from './brand-filter/brand-filter.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TextSearchComponent,
+    BrandFilterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
   ],
   bootstrap: [AppComponent]
 })

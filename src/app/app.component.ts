@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shop-ease';
+  selectedRating: string = 'default';  // default value
 }
+
+

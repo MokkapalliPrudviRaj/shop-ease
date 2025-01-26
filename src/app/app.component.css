@@ -1,0 +1,879 @@
+.app-main-area {
+    display: flex;
+    width: 100vw;
+    min-width: 380px;
+    max-width: 1440px;
+    min-height: 900px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #FAFFFC;
+}
+
+.Store_Header_Nav_Bar_with_Promotion {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    background: #FAFFFC;
+}
+
+.promoBanner {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    /* Space between text and SVG icon */
+    padding: 6px 32px;
+    /* Padding inside the promo banner */
+    gap: 8px;
+    /* Gap between the text and other elements */
+    background: #33FF92;
+    flex-wrap: wrap;
+    /* Ensure wrapping on smaller screens */
+}
+
+.background {
+    width: 100%;
+    position: absolute;
+    background: #33FF92;
+    z-index: 0;
+}
+
+.ss {
+    color: #000502;
+    font-family: "Plus Jakarta Sans";
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    z-index: 1;
+}
+
+span {
+    color: #000502;
+    font-family: "Plus Jakarta Sans";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    z-index: 1;
+}
+
+svg {
+    width: 16px;
+    height: 16px;
+    z-index: 1;
+    cursor: pointer;
+    /* Makes it clear the icon is interactive */
+}
+
+
+
+
+
+.store-header_nav_bar {
+    display: flex;
+    position: relative;
+    padding: 12px 32px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.logo {
+    display: flex;
+    height: 32px;
+    align-items: center;
+    gap: 6px;
+    color: #1A2821;
+    font-family: "Crimson Pro";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    /* 32px */
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+.icons {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.pageLinks {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.pageLinks2 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pageLinks2 a {
+    color: #1A2821;
+    font-family: "Plus Jakarta Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 133.333% */
+}
+
+.divider {
+    border-bottom: 1.5px solid rgba(51, 255, 146, 0.2);
+    ;
+}
+
+.Container {
+    display: flex;
+    min-width: 300px;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 0px 32px;
+    align-self: stretch;
+}
+
+.Sidebar {
+    display: flex;
+    min-width: 150px;
+    max-width: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+
+.MainContent {
+    display: flex;
+    min-width: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+
+.Side_Panel_Category_Filter {
+    display: flex;
+    padding: 24px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    background: #FAFFFC;
+}
+
+.CategoryContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.filter_by_brand {
+    align-self: stretch;
+    color: #1A2821;
+    font-family: "Plus Jakarta Sans";
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.checkboxes {
+    display: flex;
+    width: 240px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.styledcheckbox {
+    width: 24px;
+    height: 24px;
+    accent-color: #33FF92;
+}
+
+.brandname {
+    font-family: "Plus Jakarta Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 133.333% */
+}
+
+.divider1 {
+    border-bottom: 1.5px solid rgba(73, 110, 91, 0.2);
+    left: -32px;
+}
+
+
+
+.Three_Column_Product_Grid_With_Filters {
+    display: flex;
+    min-width: 300px;
+    padding-bottom: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    background: #FAFFFC;
+}
+
+.Filters {
+    display: flex;
+    padding: 24px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.Filter_Categories {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.filter {
+    display: flex;
+    padding: 3px 4px 3px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 22px;
+    border: 1.5px solid rgba(73, 110, 91, 0.20);
+    background: #FAFFFC;
+}
+
+.items {
+    color: rgba(20, 46, 32, 0.62);
+    text-align: right;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.3rem 0;
+}
+
+.has-submenu {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.has-submenu ul {
+    position: absolute;
+    top: 125%;
+    /* Dropdown appears below the parent */
+    left: -8px;
+    display: none;
+    /* Initially hidden */
+    flex-direction: column;
+    /* Items displayed vertically */
+    gap: 4px;
+    padding: 4px;
+    background-color: #FAFFFC;
+    border-radius: 22px;
+    border: 1.5px solid rgba(73, 110, 91, 0.20);
+    z-index: 10;
+    /* Ensure dropdown is above other content */
+}
+
+.has-submenu ul a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    top: 42px;
+    left: -22px;
+    padding: 6px 12px;
+    border-radius: 22px;
+    white-space: nowrap;
+}
+
+.has-submenu ul a:hover {
+    background-color: #f1f8ee;
+}
+
+.has-submenu:focus-within ul,
+.has-submenu:hover ul {
+    display: flex;
+    /* Show dropdown on hover or focus */
+}
+
+.Deals {
+    margin-left: 4px;
+}
+
+
+
+.productGrid {
+    display: flex;
+    min-width: 300px;
+    padding: 0px 20px;
+    align-items: center;
+    align-content: center;
+    gap: 32px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.store_item {
+    display: flex;
+    height: 384px;
+    min-width: 200px;
+    max-width: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+}
+
+.storeitem_img {
+    height: 336px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 22px;
+    border: 1.5px solid rgba(0, 184, 86, 0.00);
+    background: url('assets/shoes/Nike.svg')lightgray 50% / cover no-repeat;
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.name,
+.price {
+    align-self: stretch;
+    color: #1A2821;
+    text-overflow: ellipsis;
+    font-family: "Plus Jakarta Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 133.333% */
+}
+
+
+
+.pagination {
+    display: flex;
+    padding-top: 56px;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.page {
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.selected {
+    background: #33FF92;
+}
+
+.notselected {
+    background: #ffffff;
+}
+
+.next {
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    background: #FAFFFC;
+}
+
+.next-innner {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextnumber {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+
+
+
+
+.container-icon {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 8px;
+    flex-shrink: 0;
+}
+
+.shopease {
+    position: relative;
+    letter-spacing: 0.06em;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+.logo {
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.facebook-icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    min-width: 300px;
+    font-size: 32px;
+    font-family: 'Crimson Pro';
+}
+
+.company {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+    color: #1a2821;
+}
+
+.about-us {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.label {
+    width: 200px;
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+    display: none;
+}
+
+.footerlinkcolumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    min-width: 150px;
+    color: rgba(20, 46, 32, 0.62);
+}
+
+.newsletter1 {
+    position: relative;
+    line-height: 20px;
+}
+
+.subscribe-for-exclusive {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+}
+
+.container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.email-address {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.inputstandard {
+    flex: 1;
+    border-radius: 22px;
+    background-color: rgba(37, 126, 79, 0.15);
+    border: 1.5px solid rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 8px;
+}
+
+.subscribe {
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.buttonoutlinedstandard {
+    border-radius: 22px;
+    border: 1.5px solid rgba(73, 110, 91, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    color: #1a2821;
+}
+
+.container1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    color: rgba(20, 46, 32, 0.4);
+}
+
+.newsletter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    min-width: 300px;
+}
+
+.smicon {
+    width: 24px;
+    height: 24px;
+}
+
+.pagelinks {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 32px;
+    min-width: 300px;
+}
+
+.footer {
+    width: 100%;
+    position: relative;
+    background-color: #fafffc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 32px 32px;
+    box-sizing: border-box;
+    gap: 12px;
+    min-width: 300px;
+    text-align: left;
+    font-size: 15px;
+    color: #1a2821;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.search-field-filled-out,
+.brand,.bottom-bar {
+    display: none;
+}
+
+/* modile */
+@media (max-width: 480px) {
+
+    .pageLinks {
+        display: none;
+    }
+
+    .search-icon {
+        width: 18px;
+        position: relative;
+        height: 18px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .search-for-products {
+        flex: 1;
+        position: relative;
+        line-height: 135%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: none;
+        outline: none;
+        background-color: #e7f2ec;
+        white-space: nowrap;
+    }
+
+    .close-icon {
+        width: 18px;
+        position: relative;
+        height: 18px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .search-field-atom {
+        align-self: stretch;
+        border-radius: 360px;
+        background-color: rgba(37, 126, 82, 0.09);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10.5px 13px;
+        gap: 8px;
+    }
+
+    .search-field-filled-out {
+        width: 100%;
+        position: relative;
+        background-color: #fbfefc;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 18px;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: 17px;
+        color: #1b2821;
+        font-family: Outfit;
+    }
+
+    .Sidebar {
+        display: none;
+    }
+
+    .brand {
+        display: contents;
+    }
+
+    .checkboxes {
+        padding: 4px;
+        max-width: 135px;
+        padding-left: 20px;
+    }
+
+    .promoBanner {
+        padding: 6px 18px;
+    }
+    .store-header_nav_bar{
+        padding: 12px 18px;
+    }
+
+    .Container
+    {
+        padding: 0px 18px;
+    }
+
+    .footer {
+        padding: 32px 18px;
+    }
+
+
+    .user-icon {
+        width: 24px;
+        position: relative;
+        height: 24px;
+        overflow: hidden;
+        flex-shrink: 0;
+  }
+  .home {
+        width: 40px;
+        position: relative;
+        line-height: 135%;
+        font-weight: 500;
+        display: inline-block;
+  }
+  .tab1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px 50px;
+        z-index: 0;
+  }
+  .cart {
+        align-self: stretch;
+        position: relative;
+        line-height: 135%;
+        font-weight: 500;
+  }
+  .tab2 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding: 0px 50px;
+        gap: 3px;
+        z-index: 1;
+  }
+  .plus-icon {
+        position: absolute;
+        height: 42.92%;
+        width: 42.92%;
+        top: 28.57%;
+        right: 28.51%;
+        bottom: 28.51%;
+        left: 28.57%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+  }
+  .highlight-border {
+        position: absolute;
+        height: 119.03%;
+        width: 119.03%;
+        top: -9.52%;
+        right: -9.5%;
+        bottom: -9.5%;
+        left: -9.52%;
+        border-radius: 360px;
+        border: 3px solid #63e4a4;
+        box-sizing: border-box;
+  }
+  .round-button {
+        width: 72px;
+        position: relative;
+        border-radius: 360px;
+        background-color: #33ff92;
+        height: 72px;
+  }
+  .main-button {
+        margin: 0 !important;
+        position: absolute;
+        top: -30px;
+        left: calc(50% - 36px);
+        border-radius: 360px;
+        background-color: #fbfefc;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px;
+        z-index: 2;
+  }
+  .tabs {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+  }
+  .tabs-wrapper {
+        align-self: stretch;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+  }
+  .rectangle {
+        position: absolute;
+        bottom: 8px;
+        left: calc(50% - 60px);
+        border-radius: 360px;
+        background-color: rgba(37, 126, 82, 0.09);
+        width: 120px;
+        height: 4px;
+  }
+  .gesture-indicator-bar {
+        align-self: stretch;
+        position: relative;
+        height: 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+  }
+  .bottom-tab-bar-with-labels {
+        align-self: stretch;
+        box-shadow: 0px 16px 64px rgba(0, 0, 0, 0.2);
+        background-color: #fbfefc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 8px 0px 0px;
+        gap: 4px;
+  }
+  .bottom-tab-bar-with-big-button {
+        width: 100%;
+        position: relative;
+        background-color: #fbfefc;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 32px 0px 0px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 11px;
+        color: #1b2821;
+        font-family: Outfit;
+  }  
+}
