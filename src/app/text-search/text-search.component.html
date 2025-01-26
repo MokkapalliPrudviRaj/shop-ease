@@ -1,18 +1,18 @@
 <div>
-    <input 
-      [(ngModel)]="query" 
-      (ngModelChange)="onSearch()" 
-      placeholder="Search..." 
-      [attr.minlength]="4" 
-    />
-  </div>
-  
-  <div *ngIf="results.length">
-    <ul>
-      <li *ngFor="let result of results">
-        <h3>{{ result.name }}</h3>
-        <p>{{ result.description }}</p>
-      </li>
-    </ul>
-  </div>
-  
+  <input
+    [(ngModel)]="query"
+    (ngModelChange)="onSearch()"
+    placeholder="Search..."
+    [attr.minlength]="4"
+  />
+</div>
+
+<div >
+  <ul>
+    <li *ngFor="let result of results$ | async">
+      <h3>{{ result.title }}</h3>
+      <p>{{ result.rating }}</p>
+    </li>
+  </ul>
+</div>
+

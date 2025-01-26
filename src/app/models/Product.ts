@@ -1,4 +1,5 @@
-export interface SearchResult {
-    name: string;
-    description: string;
+export interface Product {
+    rating: number;
+    title: string;
+    link: string;
 }
