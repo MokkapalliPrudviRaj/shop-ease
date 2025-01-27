@@ -1,0 +1,80 @@
+.search-field-atom:hover {
+    border: 1.5px solid #33ff92;
+    /* Optional: Highlight border on focus */
+}
+
+.clear-btn {
+    position: absolute;
+    right: 15px;
+    /* Adjust position for clear button */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    /* Default icon color */
+    padding: 0;
+}
+
+
+.search-icon {
+    width: 18px;
+    position: relative;
+    height: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.close-icon {
+    width: 18px;
+    position: relative;
+    height: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.search-field-atom {
+    align-self: stretch;
+    border-radius: 360px;
+    background-color: rgba(37, 126, 82, 0.09);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10.5px 13px;
+    gap: 8px;
+}
+
+.search-field-filled-out {
+    width: 100%;
+    position: relative;
+    background-color: #fbfefc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 18px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 17px;
+    color: #1b2821;
+    font-family: Outfit;
+}
+
+
+.search-for-products {
+    flex: 1;
+    position: relative;
+    line-height: 135%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background-color: #e7f2ec;
+    white-space: nowrap;
+}
+
+

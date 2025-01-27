@@ -1,44 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, OnDestroy } from '@angular/core';
 import { TextSearchService } from '../services/text-search.service';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-import { SearchResult } from '../models/SerachResult';
+import { catchError, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { of, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-text-search',
   standalone: false,
-  
   templateUrl: './text-search.component.html',
-  styleUrl: './text-search.component.css'
+  styleUrls: ['./text-search.component.css']
 })
-export class TextSearchComponent {
+export class TextSearchComponent implements OnInit, OnDestroy {
   query: string = '';
-  results: SearchResult[] = [];
-  private searchTerms = new Subject<string>(); // Subject to handle input changes
+  @Output() productsChange = new EventEmitter<any[]>(); // EventEmitter to send products array to the parent
+  private searchTerms = new Subject<string>(); // Subject to capture search terms
+  private subscription: Subscription = new Subscription(); // Subscription to manage observable cleanup
 
-  constructor(private textSearchService: TextSearchService) {
-    // Listen to search term changes and fetch data
-    this.searchTerms.pipe(
-      debounceTime(500), // Wait for 500ms after the user stops typing
-      distinctUntilChanged(), // Only trigger when the search term actually changes
-      switchMap((term) => {
-        return this.textSearchService.search(term); // Call the service to fetch data
-      })
-    ).subscribe(
-      (data) => {
-        this.results = data; // Store the results in the component
-      },
-      (error) => {
-        console.error('Error fetching search results', error);
-      }
-    );
+  constructor(private textSearchService: TextSearchService) {}
+
+  products$ = this.searchTerms.pipe(
+    debounceTime(500),
+    distinctUntilChanged(),
+    switchMap((term) =>
+      this.textSearchService.search(term).pipe(
+        catchError((error) => {
+          console.error('Error fetching search results:', error);
+          return of([]); // Return empty array on error
+        })
+      )
+    )
+  );
+
+  ngOnInit(): void {
+    // Subscribe to products$ and emit results to the parent
+    this.subscription = this.products$.subscribe((products) => {
+      this.productsChange.emit(products); // Emit the latest products array
+    });
   }
 
-  // This method gets called on every input change
-  onSearch() {
-    if (this.query.length > 3) {
-      this.searchTerms.next(this.query); // Push the query to the subject
+  ngOnDestroy(): void {
+    // Cleanup subscriptions
+    this.subscription.unsubscribe();
+  }
+
+  onSearch(): void {
+    if (this.query.length >= 3) {
+      this.searchTerms.next(this.query); // Push the query to the Subject
     }
   }
+
+  clearSearch(): void {
+    this.query = ''; // Clear the search query
+    this.productsChange.emit([]); // Emit an empty array to clear results
+    this.searchTerms.next(''); // Reset the search terms to ensure further searches work
+  }
+  
 }
 

@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'shop-ease';
-  selectedRating: string = 'default';  // default value
+  title = 'Product Search App';
+  products: any[] = []; 
+
+  onProductsChange(products: any[]): void {
+    this.products = products;
+  }
 }
-
-

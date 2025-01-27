@@ -1,5 +1,6 @@
 .app-main-area {
     display: flex;
+    min-height: 100vh;
     width: 100vw;
     min-width: 380px;
     max-width: 1440px;
@@ -123,7 +124,6 @@ svg {
 
 .divider {
     border-bottom: 1.5px solid rgba(51, 255, 146, 0.2);
-    ;
 }
 
 .Container {
@@ -208,12 +208,10 @@ svg {
     /* 133.333% */
 }
 
-.divider1 {
-    border-bottom: 1.5px solid rgba(73, 110, 91, 0.2);
-    left: -32px;
+
+app-text-search {
+    width: 100vw;
 }
-
-
 
 .Three_Column_Product_Grid_With_Filters {
     display: flex;
@@ -361,7 +359,7 @@ nav ul a {
     align-self: stretch;
     border-radius: 22px;
     border: 1.5px solid rgba(0, 184, 86, 0.00);
-    background: url('assets/shoes/Nike.svg')lightgray 50% / cover no-repeat;
+    background: lightgray 50% / cover;
 }
 
 .textContent {
@@ -382,8 +380,8 @@ nav ul a {
     font-weight: 700;
     line-height: 20px;
     /* 133.333% */
-}
-
+  }
+  
 
 
 .pagination {
@@ -437,15 +435,10 @@ nav ul a {
 
 
 
-
-.container-icon {
-    align-self: stretch;
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    height: 8px;
-    flex-shrink: 0;
+.divider1 {
+    border-top: 1.5px solid rgba(51, 255, 146, 0.2);
 }
+
 
 .shopease {
     position: relative;
@@ -645,63 +638,6 @@ nav ul a {
 
     .pageLinks {
         display: none;
-    }
-
-    .search-icon {
-        width: 18px;
-        position: relative;
-        height: 18px;
-        overflow: hidden;
-        flex-shrink: 0;
-    }
-
-    .search-for-products {
-        flex: 1;
-        position: relative;
-        line-height: 135%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        border: none;
-        outline: none;
-        background-color: #e7f2ec;
-        white-space: nowrap;
-    }
-
-    .close-icon {
-        width: 18px;
-        position: relative;
-        height: 18px;
-        overflow: hidden;
-        flex-shrink: 0;
-        object-fit: cover;
-    }
-
-    .search-field-atom {
-        align-self: stretch;
-        border-radius: 360px;
-        background-color: rgba(37, 126, 82, 0.09);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 10.5px 13px;
-        gap: 8px;
-    }
-
-    .search-field-filled-out {
-        width: 100%;
-        position: relative;
-        background-color: #fbfefc;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0px 18px;
-        box-sizing: border-box;
-        text-align: left;
-        font-size: 17px;
-        color: #1b2821;
-        font-family: Outfit;
     }
 
     .Sidebar {
