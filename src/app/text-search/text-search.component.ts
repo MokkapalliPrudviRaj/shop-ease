@@ -43,7 +43,7 @@ export class TextSearchComponent implements OnInit, OnDestroy {
   }
 
   onSearch(): void {
-    if (this.query.length > 3) {
+    if (this.query.length >= 3) {
       this.searchTerms.next(this.query); // Push the query to the Subject
     }
   }

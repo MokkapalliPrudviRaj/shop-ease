@@ -1,5 +1,6 @@
 .app-main-area {
     display: flex;
+    min-height: 100vh;
     width: 100vw;
     min-width: 380px;
     max-width: 1440px;

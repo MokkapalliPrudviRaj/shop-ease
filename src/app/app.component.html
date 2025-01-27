@@ -242,7 +242,7 @@
 
       <div class="productGrid">
         <div class="store_item" *ngFor="let product of products">
-          <img [src]="product.images" alt="{{ product.title }}" class="storeitem_img" />
+          <img [src]="product.thumbnail" alt="{{ product.title }}" class="storeitem_img" />
           <div class="textContent"></div>
           <span class="name">{{ product.title }}</span>
           <span class="price">${{ product.price }}</span>

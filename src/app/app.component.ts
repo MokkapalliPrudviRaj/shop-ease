@@ -8,9 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Product Search App';
-  products: any[] = []; // Holds the search results
+  products: any[] = []; 
 
-  // Updates products when emitted from TextSearchComponent
   onProductsChange(products: any[]): void {
     this.products = products;
   }

@@ -1,5 +1,6 @@
 <div class="search-field-filled-out">
   <div class="search-field-atom">
+    <button (click)="onSearch()">
     <svg
       class="search-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -23,13 +24,13 @@
         </clipPath>
       </defs>
     </svg>
+    </button>
     <input
       type="text"
       class="search-for-products"
       placeholder="Search for products"
       [(ngModel)]="query"
-      (ngModelChange)="onSearch()"
-      [attr.minlength]="4"
+      [attr.minlength]="3"
     />
     <button *ngIf="query" (click)="clearSearch()" class="clear-btn">
       <svg
