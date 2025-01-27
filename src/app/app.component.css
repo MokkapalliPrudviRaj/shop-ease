@@ -123,7 +123,6 @@ svg {
 
 .divider {
     border-bottom: 1.5px solid rgba(51, 255, 146, 0.2);
-    ;
 }
 
 .Container {
@@ -208,10 +207,6 @@ svg {
     /* 133.333% */
 }
 
-.divider1 {
-    border-bottom: 1.5px solid rgba(73, 110, 91, 0.2);
-    left: -32px;
-}
 
 app-text-search {
     width: 100vw;
@@ -363,7 +358,7 @@ nav ul a {
     align-self: stretch;
     border-radius: 22px;
     border: 1.5px solid rgba(0, 184, 86, 0.00);
-    background: url('assets/shoes/Nike.svg')lightgray 50% / cover no-repeat;
+    background: lightgray 50% / cover;
 }
 
 .textContent {
@@ -384,8 +379,8 @@ nav ul a {
     font-weight: 700;
     line-height: 20px;
     /* 133.333% */
-}
-
+  }
+  
 
 
 .pagination {
@@ -439,15 +434,10 @@ nav ul a {
 
 
 
-
-.container-icon {
-    align-self: stretch;
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    height: 8px;
-    flex-shrink: 0;
+.divider1 {
+    border-top: 1.5px solid rgba(51, 255, 146, 0.2);
 }
+
 
 .shopease {
     position: relative;

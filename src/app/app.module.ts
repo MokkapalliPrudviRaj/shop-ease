@@ -4,10 +4,9 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TextSearchComponent } from './text-search/text-search.component';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { BrandFilterComponent } from './brand-filter/brand-filter.component';
-
 
 
 @NgModule({
@@ -21,7 +20,7 @@ import { BrandFilterComponent } from './brand-filter/brand-filter.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule
-  ],
+],
   providers: [
     provideClientHydration(withEventReplay()),
   ],

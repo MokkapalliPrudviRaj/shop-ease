@@ -1,5 +1,7 @@
 export interface Product {
     rating: number;
+    price: number;
     title: string;
-    link: string;
+    images: string;
+    brand:string;
 }

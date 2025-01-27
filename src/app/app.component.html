@@ -1,5 +1,5 @@
 <div class="app-main-area">
-  <div class="Store_Header_Nav_Bar_with_Promotion divider">
+  <div class="Store_Header_Nav_Bar_with_Promotion">
     <div class="promoBanner">
       <div class="background"></div>
       <p class="ss">Summer Sale! <span>Use code SAVE10</span></p>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="icons">
-        <svg
+        <!-- <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -77,7 +77,7 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           />
-        </svg>
+        </svg> -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -112,166 +112,24 @@
     </div>
   </div>
 
-  <app-text-search></app-text-search>
+  <app-text-search
+    (productsChange)="onProductsChange($event)"
+  ></app-text-search>
 
   <div class="Container">
-    <div class="Sidebar divider1">
+    <div class="Sidebar divider">
       <div class="Side_Panel_Category_Filter">
         <div class="CategoryContainer">
           <span class="filter_by_brand">Filter by Brand</span>
-          <div class="checkboxes">
+          <div class="checkboxes" *ngFor="let product of products">
             <label class="checkbox brandname">
               <input
                 class="styledcheckbox"
                 type="checkbox"
                 name="brand"
-                value="Woodland"
+                [value]="product.brand"
               />
-              Woodland
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Metro"
-              />
-              Metro
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Bata"
-              />
-              Bata
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Liberty"
-              />
-              Liberty
-            </label>
-          </div>
-
-          <div class="checkboxes">
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Woodland"
-              />
-              Woodland
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Metro"
-              />
-              Metro
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Bata"
-              />
-              Bata
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Liberty"
-              />
-              Liberty
-            </label>
-          </div>
-
-          <div class="checkboxes">
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Woodland"
-              />
-              Woodland
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Metro"
-              />
-              Metro
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Bata"
-              />
-              Bata
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Liberty"
-              />
-              Liberty
-            </label>
-          </div>
-
-          <div class="checkboxes">
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Woodland"
-              />
-              Woodland
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Metro"
-              />
-              Metro
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Bata"
-              />
-              Bata
-            </label>
-            <label class="checkbox brandname">
-              <input
-                class="styledcheckbox"
-                type="checkbox"
-                name="brand"
-                value="Liberty"
-              />
-              Liberty
+              {{ product.brand }}
             </label>
           </div>
         </div>
@@ -383,67 +241,11 @@
       </div>
 
       <div class="productGrid">
-        <div class="store_item">
-          <div class="storeitem_img"></div>
+        <div class="store_item" *ngFor="let product of products">
+          <img [src]="product.images" alt="{{ product.title }}" class="storeitem_img" />
           <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
-        </div>
-
-        <div class="store_item">
-          <div class="storeitem_img"></div>
-          <div class="textContent"></div>
-          <span class="name">Under Armour HOVR</span>
-          <span class="price">$140</span>
+          <span class="name">{{ product.title }}</span>
+          <span class="price">${{ product.price }}</span>
         </div>
       </div>
 
@@ -478,8 +280,7 @@
     </div>
   </div>
 
-  <div class="footer">
-    <img class="container-icon" alt="" />
+  <div class="footer divider1">
     <div class="pagelinks">
       <div class="logos">
         <div class="logo">
@@ -589,7 +390,6 @@
             <div class="home">Account</div>
           </div>
           <div class="tab2">
-
             <svg
               class="user-icon"
               xmlns="http://www.w3.org/2000/svg"
