@@ -30,6 +30,7 @@
       class="search-for-products"
       placeholder="Search for products"
       [(ngModel)]="query"
+      (keyup.enter)="onSearch()"
       [attr.minlength]="3"
     />
     <button *ngIf="query" (click)="clearSearch()" class="clear-btn">

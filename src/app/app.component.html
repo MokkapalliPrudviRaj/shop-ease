@@ -121,17 +121,19 @@
       <div class="Side_Panel_Category_Filter">
         <div class="CategoryContainer">
           <span class="filter_by_brand">Filter by Brand</span>
-          <div class="checkboxes" *ngFor="let product of products">
+          <div class="checkboxes" *ngFor="let brand of brands">
             <label class="checkbox brandname">
               <input
                 class="styledcheckbox"
                 type="checkbox"
                 name="brand"
-                [value]="product.brand"
+                [value]="brand"
+                (change)="onCheckboxChange($event, brand)"
               />
-              {{ product.brand }}
+              {{  brand != null ? brand : 'Generic' }}
             </label>
           </div>
+
         </div>
       </div>
     </div>
@@ -143,7 +145,7 @@
               <ul class="filter">
                 <li class="has-submenu">
                   <a tabindex="0"
-                    >Sort By Rating
+                  >Sort By Rating
                     <svg
                       class="Deals"
                       xmlns="http://www.w3.org/2000/svg"
@@ -162,8 +164,8 @@
                     </svg>
                   </a>
                   <ul>
-                    <li><a tabindex="1">High to Low</a></li>
-                    <li><a tabindex="2">Low to High</a></li>
+                    <li><a tabindex="1" (click)="ratingSort(false)">High to Low</a></li>
+                    <li><a tabindex="2" (click)="ratingSort(true)">Low to High</a></li>
                   </ul>
                 </li>
               </ul>
@@ -173,7 +175,7 @@
               <ul class="filter">
                 <li class="has-submenu">
                   <a tabindex="0"
-                    >Brand
+                  >Brand
                     <svg
                       class="Deals"
                       xmlns="http://www.w3.org/2000/svg"
@@ -192,42 +194,16 @@
                     </svg>
                   </a>
                   <ul>
-                    <div class="checkboxes">
+                    <div class="checkboxes" *ngFor="let brand of brands">
                       <label class="checkbox brandname">
                         <input
                           class="styledcheckbox"
                           type="checkbox"
                           name="brand"
-                          value="Woodland"
+                          [value]="brand"
+                          (change)="onCheckboxChange($event, brand)"
                         />
-                        Woodland
-                      </label>
-                      <label class="checkbox brandname">
-                        <input
-                          class="styledcheckbox"
-                          type="checkbox"
-                          name="brand"
-                          value="Metro"
-                        />
-                        Metro
-                      </label>
-                      <label class="checkbox brandname">
-                        <input
-                          class="styledcheckbox"
-                          type="checkbox"
-                          name="brand"
-                          value="Bata"
-                        />
-                        Bata
-                      </label>
-                      <label class="checkbox brandname">
-                        <input
-                          class="styledcheckbox"
-                          type="checkbox"
-                          name="brand"
-                          value="Liberty"
-                        />
-                        Liberty
+                        {{  brand != null ? brand : 'Generic' }}
                       </label>
                     </div>
                   </ul>
@@ -235,17 +211,19 @@
               </ul>
             </nav>
 
-            <span class="items">100+ Items</span>
+            <span class="items">{{ filteredProducts.length }} Items</span>
           </div>
         </div>
       </div>
 
       <div class="productGrid">
-        <div class="store_item" *ngFor="let product of products">
-          <img [src]="product.thumbnail" alt="{{ product.title }}" class="storeitem_img" />
+        <div class="store_item" *ngFor="let product of filteredProducts">
+          <img [src]="product.thumbnail" alt="{{ product.title }}" class="storeitem_img"/>
           <div class="textContent"></div>
           <span class="name">{{ product.title }}</span>
           <span class="price">${{ product.price }}</span>
+          <span class="rating">{{ product.rating }}</span>
+          <span class="rating">{{ product.brand }}</span>
         </div>
       </div>
 
