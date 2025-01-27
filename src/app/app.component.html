@@ -130,7 +130,7 @@
                 [value]="brand"
                 (change)="onCheckboxChange($event, brand)"
               />
-              {{ brand }}
+              {{  brand != null ? brand : 'Generic' }}
             </label>
           </div>
 
@@ -194,42 +194,16 @@
                     </svg>
                   </a>
                   <ul>
-                    <div class="checkboxes">
+                    <div class="checkboxes" *ngFor="let brand of brands">
                       <label class="checkbox brandname">
                         <input
                           class="styledcheckbox"
                           type="checkbox"
                           name="brand"
-                          value="Woodland"
+                          [value]="brand"
+                          (change)="onCheckboxChange($event, brand)"
                         />
-                        Woodland
-                      </label>
-                      <label class="checkbox brandname">
-                        <input
-                          class="styledcheckbox"
-                          type="checkbox"
-                          name="brand"
-                          value="Metro"
-                        />
-                        Metro
-                      </label>
-                      <label class="checkbox brandname">
-                        <input
-                          class="styledcheckbox"
-                          type="checkbox"
-                          name="brand"
-                          value="Bata"
-                        />
-                        Bata
-                      </label>
-                      <label class="checkbox brandname">
-                        <input
-                          class="styledcheckbox"
-                          type="checkbox"
-                          name="brand"
-                          value="Liberty"
-                        />
-                        Liberty
+                        {{  brand != null ? brand : 'Generic' }}
                       </label>
                     </div>
                   </ul>
@@ -237,7 +211,7 @@
               </ul>
             </nav>
 
-            <span class="items">100+ Items</span>
+            <span class="items">{{ filteredProducts.length }} Items</span>
           </div>
         </div>
       </div>

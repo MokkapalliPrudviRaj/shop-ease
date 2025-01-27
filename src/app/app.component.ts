@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Product} from './models/Product';
 
 @Component({
   selector: 'app-root',
@@ -8,25 +9,25 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'Product Search App';
-  products: any[] = [];
+  products: Product[] = [];
   brands: Set<any> = new Set();
   selectedBrands: Set<any> = new Set();
-  filteredProducts: any[] = [];
+  filteredProducts: Product[] = [];
 
 
   ratingSort(isAscending: boolean) {
     if (isAscending) {
-      this.products.sort((a, b) => a.rating - b.rating);
+      this.filteredProducts.sort((a, b) => a.rating - b.rating);
       return;
     }
-    this.products.sort((a, b) => b.rating - a.rating);
+    this.filteredProducts.sort((a, b) => b.rating - a.rating);
   }
 
   onCheckboxChange(event: Event, brand: string): void {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox.checked) {
       this.selectedBrands.add(brand);
-      this.filteredProducts = this.products.filter(product => this.selectedBrands.has(product?.brand));
+      this.filteredProducts = this.products.filter(product => this.selectedBrands.has(product.brand));
       return;
     }
 
