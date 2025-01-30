@@ -6,14 +6,12 @@ import { AppComponent } from './app.component';
 import { TextSearchComponent } from './text-search/text-search.component';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
-import { BrandFilterComponent } from './brand-filter/brand-filter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TextSearchComponent,
-    BrandFilterComponent
   ],
   imports: [
     BrowserModule,
