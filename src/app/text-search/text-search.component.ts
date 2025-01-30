@@ -48,11 +48,11 @@ export class TextSearchComponent implements OnInit, OnDestroy {
     }
   }
 
-  clearSearch(): void {
-    this.query = ''; // Clear the search query
-    this.productsChange.emit([]); // Emit an empty array to clear results
-    this.searchTerms.next(''); // Reset the search terms to ensure further searches work
-  }
+  // clearSearch(): void {
+  //   this.query = ''; // Clear the search query
+  //   this.productsChange.emit([]); // Emit an empty array to clear results
+  //   this.searchTerms.next(''); // Reset the search terms to ensure further searches work
+  // }
   
 }
 

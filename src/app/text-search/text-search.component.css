@@ -3,7 +3,7 @@
     /* Optional: Highlight border on focus */
 }
 
-.clear-btn {
+.search-btn {
     position: absolute;
     right: 15px;
     /* Adjust position for clear button */
@@ -19,22 +19,16 @@
 }
 
 
-.search-icon {
-    width: 18px;
-    position: relative;
-    height: 18px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
+/* 
 
-.close-icon {
+.search-btn {
     width: 18px;
     position: relative;
     height: 18px;
     overflow: hidden;
     flex-shrink: 0;
     object-fit: cover;
-}
+} */
 
 .search-field-atom {
     align-self: stretch;
@@ -44,7 +38,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 10.5px 13px;
+    padding: 12px 13px;
     gap: 8px;
 }
 

@@ -63,21 +63,6 @@
         </div>
       </div>
       <div class="icons">
-        <!-- <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M21.0004 21L16.6504 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-            stroke="#1A2821"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg> -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -130,10 +115,9 @@
                 [value]="brand"
                 (change)="onCheckboxChange($event, brand)"
               />
-              {{  brand != null ? brand : 'Generic' }}
+              {{ brand != null ? brand : "Generic" }}
             </label>
           </div>
-
         </div>
       </div>
     </div>
@@ -145,7 +129,7 @@
               <ul class="filter">
                 <li class="has-submenu">
                   <a tabindex="0"
-                  >Sort By Rating
+                    >Sort By Rating
                     <svg
                       class="Deals"
                       xmlns="http://www.w3.org/2000/svg"
@@ -164,8 +148,14 @@
                     </svg>
                   </a>
                   <ul>
-                    <li><a tabindex="1" (click)="ratingSort(false)">High to Low</a></li>
-                    <li><a tabindex="2" (click)="ratingSort(true)">Low to High</a></li>
+                    <li>
+                      <a tabindex="1" (click)="ratingSort(false)"
+                        >High to Low</a
+                      >
+                    </li>
+                    <li>
+                      <a tabindex="2" (click)="ratingSort(true)">Low to High</a>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -175,7 +165,7 @@
               <ul class="filter">
                 <li class="has-submenu">
                   <a tabindex="0"
-                  >Brand
+                    >Brand
                     <svg
                       class="Deals"
                       xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +193,7 @@
                           [value]="brand"
                           (change)="onCheckboxChange($event, brand)"
                         />
-                        {{  brand != null ? brand : 'Generic' }}
+                        {{ brand != null ? brand : "Generic" }}
                       </label>
                     </div>
                   </ul>
@@ -217,13 +207,58 @@
       </div>
 
       <div class="productGrid">
-        <div class="store_item" *ngFor="let product of filteredProducts">
-          <img [src]="product.thumbnail" alt="{{ product.title }}" class="storeitem_img"/>
+        <div
+          class="store_item"
+          *ngFor="let product of filteredProducts"
+          (click)="showProductDetails(product)"
+          
+        >
+          <img
+            [src]="product.thumbnail"
+            alt="{{ product.title }}"
+            class="storeitem_img"
+          />
           <div class="textContent"></div>
           <span class="name">{{ product.title }}</span>
           <span class="price">${{ product.price }}</span>
-          <span class="rating">{{ product.rating }}</span>
-          <span class="rating">{{ product.brand }}</span>
+          <span class="rating">Rating: {{ product.rating }}</span>
+          <span class="brandname"
+            >Brand: {{ product.brand!= null ? product.brand : "Generic" }}</span
+          >
+        </div>
+      </div>
+
+      <!-- Floating Product Details Screen -->
+      <div class="product-details-overlay" *ngIf="selectedProduct" >
+        <div class="product-details">
+          <button class="close-btn" (click)="closeDetails()">X</button>
+          <div class="details-content">
+            <!-- Left: Images -->
+            <div class="product-images">
+              <img
+                *ngFor="let image of selectedProduct.images"
+                [src]="image"
+                alt="Product Image"
+              />
+            </div>
+            <!-- Right: Product Details -->
+            <div class="product-info">
+              <h2>{{ selectedProduct.title }}</h2>
+              <p>{{ selectedProduct.description }}</p>
+              <p>Brand: {{ selectedProduct.brand }}</p>
+              <p>Category: {{ selectedProduct.category }}</p>
+              <p>Price: ${{ selectedProduct.price }}</p>
+              <p>Rating: {{ selectedProduct.rating }}</p>
+              <p>Stock: {{ selectedProduct.availabilityStatus }}</p>
+              <p>
+                Dimensions: {{ selectedProduct.dimensions.width }} x
+                {{ selectedProduct.dimensions.height }} x
+                {{ selectedProduct.dimensions.depth }}
+              </p>
+              <p>Return Policy: {{ selectedProduct.returnPolicy }}</p>
+              <p>Warranty: {{ selectedProduct.warrantyInformation }}</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -419,3 +454,4 @@
     </div>
   </div>
 </div>
+

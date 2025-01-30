@@ -4,7 +4,6 @@
     width: 100vw;
     min-width: 380px;
     max-width: 1440px;
-    min-height: 900px;
     flex-direction: column;
     align-items: flex-start;
     background: #FAFFFC;
@@ -127,6 +126,7 @@ svg {
 }
 
 .Container {
+    flex: 1;
     display: flex;
     min-width: 300px;
     align-items: flex-start;
@@ -340,13 +340,13 @@ nav ul a {
     gap: 32px;
     align-self: stretch;
     flex-wrap: wrap;
+    justify-content:normal;
 }
 
 .store_item {
     display: flex;
-    height: 384px;
-    min-width: 200px;
-    max-width: 500px;
+    height: fit-content;
+    max-width: 260px;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
@@ -370,7 +370,7 @@ nav ul a {
 }
 
 .name,
-.price {
+.price,.rating,.brand {
     align-self: stretch;
     color: #1A2821;
     text-overflow: ellipsis;
@@ -663,6 +663,7 @@ nav ul a {
 
     .Container
     {
+        flex: 1;
         padding: 0px 18px;
     }
 
@@ -812,4 +813,104 @@ nav ul a {
         color: #1b2821;
         font-family: Outfit;
   }  
+  .store_item{
+    min-width: 250px;
+    max-width: fit-content;
+  }
 }
+
+
+
+
+
+
+/* Product container and cards */
+  
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Floating product details modal */
+  .product-details-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .product-details {
+    background: #fff;
+    width: 70%;
+    max-width: 1000px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .details-content {
+    display: flex;
+  }
+  
+  /* Left side: Images */
+  .product-images {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .product-images img {
+    max-width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Right side: Product info */
+  .product-info {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .product-info h2 {
+    margin-bottom: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

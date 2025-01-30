@@ -1,8 +1,17 @@
 <div class="search-field-filled-out">
   <div class="search-field-atom">
-    <button (click)="onSearch()">
-    <svg
-      class="search-icon"
+
+    <input
+      type="text"
+      class="search-for-products"
+      placeholder="Search for products"
+      [(ngModel)]="query"
+      (keyup.enter)="onSearch()"
+      [attr.minlength]="3"
+    />
+    <button (click)="onSearch()" class="search-btn">
+      <svg 
+      class="search-btn"
       xmlns="http://www.w3.org/2000/svg"
       width="18"
       height="18"
@@ -24,31 +33,6 @@
         </clipPath>
       </defs>
     </svg>
-    </button>
-    <input
-      type="text"
-      class="search-for-products"
-      placeholder="Search for products"
-      [(ngModel)]="query"
-      (keyup.enter)="onSearch()"
-      [attr.minlength]="3"
-    />
-    <button *ngIf="query" (click)="clearSearch()" class="clear-btn">
-      <svg
-        class="clear-btn"
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 18 18"
-        fill="none"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M13.7197 3.21967C14.0126 2.92678 14.4874 2.92678 14.7803 3.21967C15.0732 3.51256 15.0732 3.98744 14.7803 4.28033L10.0607 9L14.7803 13.7197C15.0732 14.0126 15.0732 14.4874 14.7803 14.7803C14.4874 15.0732 14.0126 15.0732 13.7197 14.7803L9 10.0607L4.28033 14.7803C3.98744 15.0732 3.51256 15.0732 3.21967 14.7803C2.92678 14.4874 2.92678 14.0126 3.21967 13.7197L7.93934 9L3.21967 4.28033C2.92678 3.98744 2.92678 3.51256 3.21967 3.21967C3.51256 2.92678 3.98744 2.92678 4.28033 3.21967L9 7.93934L13.7197 3.21967Z"
-          fill="#1B2821"
-        />
-      </svg>
     </button>
   </div>
 </div>

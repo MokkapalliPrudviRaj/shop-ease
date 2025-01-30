@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {Product} from './models/Product';
+import { Component } from '@angular/core';
+import { Product } from './models/Product';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,23 @@ export class AppComponent {
   brands: Set<any> = new Set();
   selectedBrands: Set<any> = new Set();
   filteredProducts: Product[] = [];
+  selectedProduct: any = null;
+  showproductDetails: boolean = false;
+
+  constructor(private router: Router) {}
+
+
+  showProductDetails(product: any) {
+    this.selectedProduct = product;
+    this.showproductDetails= true;
+    // this.router.navigate(['/product', product.id]);
+  }
+
+
+
+  closeDetails() {
+    this.selectedProduct = null;
+  }
 
 
   ratingSort(isAscending: boolean) {
@@ -45,3 +63,4 @@ export class AppComponent {
     this.brands = new Set(products.map(a => a.brand));
   }
 }
+
