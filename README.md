@@ -1,5 +1,6 @@
 # ShopEase
 
+Figma Design: https://www.figma.com/design/yMPevY0F0oZjWXNwK5CRH6/ShopEase?node-id=0-1&t=B00MdLuNwxk0ZKld-1
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
 ## Development server
